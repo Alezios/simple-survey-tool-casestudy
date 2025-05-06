@@ -1,0 +1,85 @@
+[
+  {
+    "id": "1",
+    "title": "Team Performance Survey",
+    "description": "Help us understand how our team is performing",
+    "questions": {
+      "elements": [
+        {
+          "name": "satisfaction",
+          "title": "How satisfied are you with our team's performance?",
+          "type": "rating",
+          "rateMax": 5,
+          "minRateDescription": "Not Satisfied",
+          "maxRateDescription": "Very Satisfied"
+        },
+        {
+          "name": "communication",
+          "title": "How would you rate our team's communication?",
+          "type": "rating",
+          "rateMax": 5,
+          "minRateDescription": "Poor",
+          "maxRateDescription": "Excellent"
+        },
+        {
+          "name": "improvements",
+          "title": "What could we improve on?",
+          "type": "comment"
+        },
+        {
+          "name": "teamCollaboration",
+          "title": "How effective is our team collaboration?",
+          "type": "rating",
+          "rateMax": 5,
+          "minRateDescription": "Not Effective",
+          "maxRateDescription": "Very Effective"
+        },
+        {
+          "name": "workloadBalance",
+          "title": "Is the workload distributed fairly among team members?",
+          "type": "boolean"
+        }
+      ]
+    }
+  },
+  {
+    "id": "2",
+    "title": "Project Feedback",
+    "description": "Share your thoughts on our recent project",
+    "questions": {
+      "elements": [
+        {
+          "name": "projectQuality",
+          "title": "How would you rate the overall quality of the project?",
+          "type": "rating",
+          "rateMax": 5,
+          "minRateDescription": "Poor",
+          "maxRateDescription": "Excellent"
+        },
+        {
+          "name": "timeline",
+          "title": "Was the project completed within a reasonable timeline?",
+          "type": "boolean"
+        },
+        {
+          "name": "feedback",
+          "title": "Please provide any additional feedback",
+          "type": "comment"
+        },
+        {
+          "name": "clientSatisfaction",
+          "title": "How satisfied do you think the client is with the deliverables?",
+          "type": "rating",
+          "rateMax": 5,
+          "minRateDescription": "Not Satisfied",
+          "maxRateDescription": "Very Satisfied"
+        },
+        {
+          "name": "futureDevelopment",
+          "title": "What would you suggest for future development of this project?",
+          "type": "comment"
+        }
+      ]
+    }
+  }
+]
