@@ -1,9 +1,8 @@
 CREATE TABLE survey_questions (
     id VARCHAR(36) NOT NULL,
-    question_type VARCHAR(31) NOT NULL,
+    question_type VARCHAR(50) NOT NULL,
     question_text TEXT NOT NULL,
     is_required BOOLEAN DEFAULT FALSE,
-    question_type ENUM('TEXT', 'BOOLEAN', 'RATING', 'SINGLE_SELECT', 'MULTI_SELECT') NOT NULL,
     
     -- Fields for TextQuestionEntity
     default_text TEXT,
@@ -46,6 +45,6 @@ CREATE TABLE survey_responses (
     survey_id VARCHAR(36) NOT NULL,
     answered_at DATETIME NOT NULL,
     answer_value TEXT,
-    CONSTRAINT fk_survey_responses_survey FOREIGN KEY (survey_id) REFERENCES surveys(id)
+    CONSTRAINT fk_survey_responses_survey FOREIGN KEY (survey_id) REFERENCES surveys(id),
     PRIMARY KEY (id)
 );

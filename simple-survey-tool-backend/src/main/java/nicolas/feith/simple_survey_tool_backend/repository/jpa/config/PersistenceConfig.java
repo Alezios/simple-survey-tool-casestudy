@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EntityScan(basePackages = "nicolas.feith.simple_survey_tool_backend.repository.jpa.entities")
-@EnableJpaRepositories(basePackages = "nicolas.feith.simple_survey_tool_backend.repository.jpa.entities")
+@EnableJpaRepositories(basePackages = "nicolas.feith.simple_survey_tool_backend.repository.jpa")
 public class PersistenceConfig {
     
 }

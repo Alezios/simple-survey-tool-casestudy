@@ -13,6 +13,13 @@ services:
       - mariadb_data:/var/lib/mysql
     networks:
       - survey-network
+    healthcheck:
+        test: [ "CMD", "healthcheck.sh", "--su-mysql", "--connect", "--innodb_initialized" ]
+        start_period: 1m
+        start_interval: 10s
+        interval: 1m
+        timeout: 5s
+        retries: 3
 
   backend:
     build:
@@ -22,7 +29,8 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - mariadb
+      mariadb: 
+        condition: service_healthy
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mariadb://mariadb:3306/survey_db
       - SPRING_DATASOURCE_USERNAME=root
