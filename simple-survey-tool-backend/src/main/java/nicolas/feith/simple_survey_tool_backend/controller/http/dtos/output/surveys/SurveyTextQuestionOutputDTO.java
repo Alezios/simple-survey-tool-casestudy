@@ -5,7 +5,7 @@ import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class SurveyTextQuestionOutputDTO extends SurveyQuestionOutputDTO {
-    @JsonProperty("value")
+    @JsonProperty("placeholder")
     private final String value;
 
     public SurveyTextQuestionOutputDTO(UUID id, String questionText, boolean isRequired, String type, String value) {

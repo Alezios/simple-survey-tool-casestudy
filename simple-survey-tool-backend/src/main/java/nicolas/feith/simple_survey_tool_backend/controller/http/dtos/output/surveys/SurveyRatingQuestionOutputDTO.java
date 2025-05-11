@@ -13,7 +13,7 @@ public class SurveyRatingQuestionOutputDTO extends SurveyQuestionOutputDTO {
     private final String minRatingLabel;
     @JsonProperty("maxRateDescription")
     private final String maxRatingLabel;
-    @JsonProperty("selectedRating")
+    @JsonProperty("defaultValue")
     private final Integer selectedRating;
 
     public SurveyRatingQuestionOutputDTO(UUID id, String questionText, boolean isRequired, String type, 

@@ -5,7 +5,7 @@ import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class SurveyBooleanQuestionOutputDTO extends SurveyQuestionOutputDTO {
-    @JsonProperty("value")
+    @JsonProperty("defaultValue")
     private final Boolean value;
 
     public SurveyBooleanQuestionOutputDTO(UUID id, String questionText, boolean isRequired, String type, Boolean value) {

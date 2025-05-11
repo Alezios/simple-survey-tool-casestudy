@@ -64,7 +64,7 @@ public class SurveyHTTPController {
         return ResponseEntity.ok(surveyReponsesDTO);
     }
     
-    @PostMapping("/{id}/responses")
+    @PostMapping("/{id}/response")
     public ResponseEntity<Void> submitSurveyResponse(@PathVariable("id") UUID id, 
     @RequestBody SurveyResponseInputDTO responseInputDTO) {
         LOGGER.info("Submitting response for survey with id: {}", id);

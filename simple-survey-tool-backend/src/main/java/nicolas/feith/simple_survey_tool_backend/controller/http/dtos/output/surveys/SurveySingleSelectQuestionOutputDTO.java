@@ -6,9 +6,9 @@ import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class SurveySingleSelectQuestionOutputDTO extends SurveyQuestionOutputDTO {
-    @JsonProperty("options")
+    @JsonProperty("choices")
     private final List<String> options;
-    @JsonProperty("selectedOption")
+    @JsonProperty("defaultValue")
     private final String selectedOption;
 
     public SurveySingleSelectQuestionOutputDTO(UUID id, String questionText, boolean isRequired, String type, 

@@ -45,7 +45,7 @@ public class SurveyRepositoryImpl implements SurveyRepository {
     @Override
     @Transactional(readOnly = true)
     public List<SurveyResponse> getSurveyResponses(UUID surveyId) {
-        return responseJpaRepository.findBySurveyId(surveyId.toString()).stream()
+        return responseJpaRepository.findBySurveyId(surveyId).stream()
                 .map(SurveyResponseEntity::toSurveyResponse)
                 .collect(Collectors.toList());
     }

@@ -1,6 +1,7 @@
 package nicolas.feith.simple_survey_tool_backend.repository.jpa;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -10,5 +11,5 @@ import nicolas.feith.simple_survey_tool_backend.repository.jpa.entities.SurveyRe
 @Repository
 public interface SurveyResponseJpaRepository extends JpaRepository<SurveyResponseEntity, Long> {
     
-    List<SurveyResponseEntity> findBySurveyId(String surveyId);
+    List<SurveyResponseEntity> findBySurveyId(UUID surveyId);
 }

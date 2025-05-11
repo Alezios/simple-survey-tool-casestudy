@@ -14,6 +14,6 @@ public class SurveyResponseOutputDTO {
 
     public SurveyResponseOutputDTO(LocalDateTime answeredAt, Map<UUID, Object> questionResponses) {
         this.answeredAt = answeredAt;
-        this.questionResponses = questionResponses != null ? Map.copyOf(questionResponses) : questionResponses; // Immutable copy of the map
+        this.questionResponses = questionResponses;
     }
 }
