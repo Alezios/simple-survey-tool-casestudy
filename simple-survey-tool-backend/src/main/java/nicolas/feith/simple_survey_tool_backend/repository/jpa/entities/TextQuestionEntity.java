@@ -5,8 +5,6 @@ import java.util.UUID;
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-
-import nicolas.feith.simple_survey_tool_backend.core.constants.SurveyQuestionType;
 import nicolas.feith.simple_survey_tool_backend.core.model.surveys.SurveyQuestion;
 import nicolas.feith.simple_survey_tool_backend.core.model.surveys.SurveyTextQuestion;
 
@@ -44,11 +42,6 @@ public class TextQuestionEntity extends SurveyQuestionEntity {
 
     public void setLongText(boolean isLongText) {
         this.isLongText = isLongText;
-    }
-
-    @Override
-    public SurveyQuestionType getQuestionType() {
-        return isLongText ? SurveyQuestionType.LONG_TEXT : SurveyQuestionType.SHORT_TEXT;
     }
 
     @Override

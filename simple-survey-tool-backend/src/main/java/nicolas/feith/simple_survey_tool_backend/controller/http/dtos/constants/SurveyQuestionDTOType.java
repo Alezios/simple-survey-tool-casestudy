@@ -8,13 +8,13 @@ public enum SurveyQuestionDTOType {
     RATING("rating"),
     BOOLEAN("boolean");
 
-    private final String type;
+    private final String stringValue;
 
-    SurveyQuestionDTOType(String type) {
-        this.type = type;
+    SurveyQuestionDTOType(String stringValue) {
+        this.stringValue = stringValue;
     }
 
-    public String getType() {
-        return type;
+    public String getStringValue() {
+        return stringValue;
     }
 }

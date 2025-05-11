@@ -5,8 +5,6 @@ import java.util.UUID;
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-
-import nicolas.feith.simple_survey_tool_backend.core.constants.SurveyQuestionType;
 import nicolas.feith.simple_survey_tool_backend.core.model.surveys.SurveyBooleanQuestion;
 import nicolas.feith.simple_survey_tool_backend.core.model.surveys.SurveyQuestion;
 
@@ -32,11 +30,6 @@ public class BooleanQuestionEntity extends SurveyQuestionEntity {
 
     public void setDefaultValue(Boolean defaultValue) {
         this.defaultValue = defaultValue;
-    }
-
-    @Override
-    public SurveyQuestionType getQuestionType() {
-        return SurveyQuestionType.BOOLEAN;
     }
 
     @Override

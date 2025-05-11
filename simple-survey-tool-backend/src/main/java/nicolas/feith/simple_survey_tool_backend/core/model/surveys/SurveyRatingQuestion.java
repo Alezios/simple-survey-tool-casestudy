@@ -3,7 +3,6 @@ package nicolas.feith.simple_survey_tool_backend.core.model.surveys;
 import java.util.Objects;
 import java.util.UUID;
 
-import nicolas.feith.simple_survey_tool_backend.core.constants.SurveyQuestionType;
 import nicolas.feith.simple_survey_tool_backend.core.ports.SurveyQuestionVisitor;
 
 public class SurveyRatingQuestion extends SurveyQuestion {
@@ -52,11 +51,6 @@ public class SurveyRatingQuestion extends SurveyQuestion {
     @Override
     public <T> T accept(SurveyQuestionVisitor<T> visitor) {
         return visitor.visitRatingQuestion(this);
-    }
-
-    @Override
-    public SurveyQuestionType getType() {
-        return SurveyQuestionType.RATING;
     }
 
     private Integer validateSelectedRating(Integer selectedRating) {

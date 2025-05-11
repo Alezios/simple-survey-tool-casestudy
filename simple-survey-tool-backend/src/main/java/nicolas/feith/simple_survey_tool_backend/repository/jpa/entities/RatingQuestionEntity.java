@@ -5,8 +5,6 @@ import java.util.UUID;
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-
-import nicolas.feith.simple_survey_tool_backend.core.constants.SurveyQuestionType;
 import nicolas.feith.simple_survey_tool_backend.core.model.surveys.SurveyQuestion;
 import nicolas.feith.simple_survey_tool_backend.core.model.surveys.SurveyRatingQuestion;
 
@@ -82,11 +80,6 @@ public class RatingQuestionEntity extends SurveyQuestionEntity {
 
     public void setDefaultSelectedRating(Integer defaultSelectedRating) {
         this.defaultSelectedRating = defaultSelectedRating;
-    }
-
-    @Override
-    public SurveyQuestionType getQuestionType() {
-        return SurveyQuestionType.RATING;
     }
 
     @Override

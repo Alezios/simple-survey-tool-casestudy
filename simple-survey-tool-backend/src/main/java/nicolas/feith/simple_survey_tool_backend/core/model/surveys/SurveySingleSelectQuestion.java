@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-import nicolas.feith.simple_survey_tool_backend.core.constants.SurveyQuestionType;
 import nicolas.feith.simple_survey_tool_backend.core.ports.SurveyQuestionVisitor;
 
 public class SurveySingleSelectQuestion extends SurveyQuestion {
@@ -36,11 +35,6 @@ public class SurveySingleSelectQuestion extends SurveyQuestion {
     @Override
     public <T> T accept(SurveyQuestionVisitor<T> visitor) {
         return visitor.visitSingleSelectQuestion(this);
-    }
-
-    @Override
-    public SurveyQuestionType getType() {
-        return SurveyQuestionType.SINGLE_CHOICE;
     }
 
     private String validateSelectedOption(String selectedOption) {

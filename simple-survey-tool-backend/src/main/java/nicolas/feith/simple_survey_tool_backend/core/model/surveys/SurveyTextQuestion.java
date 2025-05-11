@@ -2,7 +2,6 @@ package nicolas.feith.simple_survey_tool_backend.core.model.surveys;
 
 import java.util.UUID;
 
-import nicolas.feith.simple_survey_tool_backend.core.constants.SurveyQuestionType;
 import nicolas.feith.simple_survey_tool_backend.core.ports.SurveyQuestionVisitor;
 
 public  class SurveyTextQuestion extends SurveyQuestion {
@@ -34,10 +33,4 @@ public  class SurveyTextQuestion extends SurveyQuestion {
         return visitor.visitTextQuestion(this);
     }    
 
-    @Override
-    public SurveyQuestionType getType() {
-        return isLongText ? SurveyQuestionType.LONG_TEXT : SurveyQuestionType.SHORT_TEXT;
-    }
-
-    
 }

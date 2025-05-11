@@ -8,7 +8,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import nicolas.feith.simple_survey_tool_backend.core.constants.SurveyQuestionType;
 import nicolas.feith.simple_survey_tool_backend.core.model.surveys.SurveyMultiSelectQuestion;
 import nicolas.feith.simple_survey_tool_backend.core.model.surveys.SurveyQuestion;
 import nicolas.feith.simple_survey_tool_backend.repository.jpa.utils.StringListJSONConverter;
@@ -54,11 +53,6 @@ public class MultiSelectQuestionEntity extends SurveyQuestionEntity {
 
     public void setDefaultSelectedOptions(List<String> defaultSelectedOptions) {
         this.defaultSelectedOptions = defaultSelectedOptions;
-    }
-
-    @Override
-    public SurveyQuestionType getQuestionType() {
-        return SurveyQuestionType.MULTIPLE_CHOICE;
     }
 
     @Override

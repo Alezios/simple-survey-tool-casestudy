@@ -3,7 +3,6 @@ package nicolas.feith.simple_survey_tool_backend.core.model.surveys;
 import java.util.Objects;
 import java.util.UUID;
 
-import nicolas.feith.simple_survey_tool_backend.core.constants.SurveyQuestionType;
 import nicolas.feith.simple_survey_tool_backend.core.ports.SurveyQuestionVisitor;
 
 public abstract class SurveyQuestion {
@@ -35,5 +34,4 @@ public abstract class SurveyQuestion {
 
     public abstract <R> R accept(SurveyQuestionVisitor<R> visitor);
 
-    public abstract SurveyQuestionType getType(); 
 }

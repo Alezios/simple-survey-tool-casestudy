@@ -2,7 +2,6 @@ package nicolas.feith.simple_survey_tool_backend.core.model.surveys;
 
 import java.util.UUID;
 
-import nicolas.feith.simple_survey_tool_backend.core.constants.SurveyQuestionType;
 import nicolas.feith.simple_survey_tool_backend.core.ports.SurveyQuestionVisitor;
 
 public class SurveyBooleanQuestion extends SurveyQuestion {
@@ -27,10 +26,5 @@ public class SurveyBooleanQuestion extends SurveyQuestion {
     @Override
     public <T> T accept(SurveyQuestionVisitor<T> visitor) {
         return visitor.visitBooleanQuestion(this);
-    }
-
-    @Override
-    public SurveyQuestionType getType() {
-        return SurveyQuestionType.BOOLEAN;
     }
 }

@@ -8,7 +8,6 @@ import java.util.UUID;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import nicolas.feith.simple_survey_tool_backend.core.constants.SurveyQuestionType;
 import nicolas.feith.simple_survey_tool_backend.core.model.surveyresponses.SurveyResponse;
 import nicolas.feith.simple_survey_tool_backend.core.model.surveys.Survey;
 import nicolas.feith.simple_survey_tool_backend.core.model.surveys.SurveyQuestion;

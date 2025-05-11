@@ -17,7 +17,7 @@ import nicolas.feith.simple_survey_tool_backend.core.model.surveys.SurveySingleS
 import nicolas.feith.simple_survey_tool_backend.core.model.surveys.SurveyTextQuestion;
 
 public class SurveyResponse {
-    // Only class with blatant violation of clean code in App. Used for simplicity
+    // Only class with blatant violation of clean code in App. Used generic Object type and class casts for simplicity
     // since SurveyResponse will only ever be a read-only object
     private Survey fromSurvey;
     private LocalDateTime answeredAt;

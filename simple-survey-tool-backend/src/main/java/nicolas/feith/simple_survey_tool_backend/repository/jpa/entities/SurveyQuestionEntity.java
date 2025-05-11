@@ -9,7 +9,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
-import nicolas.feith.simple_survey_tool_backend.core.constants.SurveyQuestionType;
 import nicolas.feith.simple_survey_tool_backend.core.model.surveys.SurveyQuestion;
 
 @Entity
@@ -61,8 +60,6 @@ public abstract class SurveyQuestionEntity {
     public void setRequired(boolean isRequired) {
         this.isRequired = isRequired;
     }
-    
-    public abstract SurveyQuestionType getQuestionType();
 
     public abstract SurveyQuestion toSurveyQuestion();
 }

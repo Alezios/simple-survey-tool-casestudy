@@ -4,8 +4,6 @@ import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import nicolas.feith.simple_survey_tool_backend.controller.http.dtos.constants.SurveyQuestionDTOType;
-
 public class SurveyRatingQuestionOutputDTO extends SurveyQuestionOutputDTO {
     @JsonProperty("rateMin")
     private final int minRating;
@@ -18,7 +16,7 @@ public class SurveyRatingQuestionOutputDTO extends SurveyQuestionOutputDTO {
     @JsonProperty("selectedRating")
     private final Integer selectedRating;
 
-    public SurveyRatingQuestionOutputDTO(UUID id, String questionText, boolean isRequired, SurveyQuestionDTOType type, 
+    public SurveyRatingQuestionOutputDTO(UUID id, String questionText, boolean isRequired, String type, 
                                         int minRating, int maxRating, String minRatingLabel, 
                                         String maxRatingLabel, Integer selectedRating) {
         super(id, questionText, type, isRequired);

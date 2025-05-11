@@ -19,7 +19,7 @@ public class HttpDTOExportQuestionVisitor implements SurveyQuestionVisitor<Surve
     public SurveyQuestionOutputDTO visitTextQuestion(SurveyTextQuestion question) {
         return new SurveyTextQuestionOutputDTO(
                 question.getId(), question.getQuestionText(), question.isRequired(),
-                question.isLongText() ? SurveyQuestionDTOType.COMMENT : SurveyQuestionDTOType.TEXT,
+                question.isLongText() ? SurveyQuestionDTOType.COMMENT.getStringValue() : SurveyQuestionDTOType.TEXT.getStringValue(),
                 question.getDefaultText());
     }
 
@@ -29,7 +29,7 @@ public class HttpDTOExportQuestionVisitor implements SurveyQuestionVisitor<Surve
                 question.getId(),
                 question.getQuestionText(),
                 question.isRequired(),
-                SurveyQuestionDTOType.SINGLE_CHOICE,
+                SurveyQuestionDTOType.SINGLE_CHOICE.getStringValue(),
                 question.getOptions(),
                 question.getDefaultSelectedOption());
     }
@@ -40,7 +40,7 @@ public class HttpDTOExportQuestionVisitor implements SurveyQuestionVisitor<Surve
                 question.getId(),
                 question.getQuestionText(),
                 question.isRequired(),
-                SurveyQuestionDTOType.MULTIPLE_CHOICE,
+                SurveyQuestionDTOType.MULTIPLE_CHOICE.getStringValue(),
                 question.getOptions(),
                 question.getDefaultSelectedOptions());
     }
@@ -51,7 +51,7 @@ public class HttpDTOExportQuestionVisitor implements SurveyQuestionVisitor<Surve
                 question.getId(),
                 question.getQuestionText(),
                 question.isRequired(),
-                SurveyQuestionDTOType.RATING,
+                SurveyQuestionDTOType.RATING.getStringValue(),
                 question.getMinRating(),
                 question.getMaxRating(),
                 question.getMinRatingLabel(),
@@ -65,7 +65,7 @@ public class HttpDTOExportQuestionVisitor implements SurveyQuestionVisitor<Surve
                 question.getId(),
                 question.getQuestionText(),
                 question.isRequired(),
-                SurveyQuestionDTOType.BOOLEAN,
+                SurveyQuestionDTOType.BOOLEAN.getStringValue(),
                 question.getDefaultValue());
     }
 

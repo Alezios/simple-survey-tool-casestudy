@@ -8,7 +8,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import nicolas.feith.simple_survey_tool_backend.core.constants.SurveyQuestionType;
 import nicolas.feith.simple_survey_tool_backend.core.model.surveys.SurveyQuestion;
 import nicolas.feith.simple_survey_tool_backend.core.model.surveys.SurveySingleSelectQuestion;
 import nicolas.feith.simple_survey_tool_backend.repository.jpa.utils.StringListJSONConverter;
@@ -51,11 +50,6 @@ public class SingleSelectQuestionEntity extends SurveyQuestionEntity {
 
     public void setDefaultSelectedOption(String defaultSelectedOption) {
         this.defaultSelectedOption = defaultSelectedOption;
-    }
-
-    @Override
-    public SurveyQuestionType getQuestionType() {
-        return SurveyQuestionType.SINGLE_CHOICE;
     }
 
     @Override
