@@ -1,47 +1,47 @@
 <script setup lang="ts">
 import 'survey-core/survey-core.css';
 import { ref, onMounted, computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { Model } from 'survey-core'
 import { SurveyComponent } from 'survey-vue3-ui'
-import surveyData from '@/data/surveys.json'
+import { surveyApi } from '@/api/surveyApi'
 
 // Get the survey ID from the route params
 const route = useRoute()
+const router = useRouter()
 const surveyId = computed(() => route.params.id as string)
-
-// Type definition for our survey
-interface SurveyItem {
-  id: string
-  title: string
-  description: string
-  questions: Record<string, any>
-}
 
 let survey: Model | null = null
 const loading = ref(true)
 const error = ref<string | null>(null)
+const submitting = ref(false)
 
-onMounted(() => {
-  // Find the survey with the matching ID
-  const foundSurvey = surveyData.find(s => s.id === surveyId.value)
-  
-  if (foundSurvey) {
-    // Create a SurveyJS model with the questions
-    survey = new Model(foundSurvey.questions)
+onMounted(async () => {
+  try {
+    const foundSurvey = await surveyApi.getSurveyById(surveyId.value)
     
-    // Handle survey completion
-    survey.onComplete.add((sender) => {
-      const results = JSON.stringify(sender.data)
-      console.log('Survey results:', results)
-      // In a real application, you would send this data to your backend
-      alert("Thank you for completing the survey!")
+    survey = new Model({elements: foundSurvey.questions})
+    console.log({elements: foundSurvey.questions})
+    
+    survey.onComplete.add(async (sender) => {
+      try {
+        submitting.value = true
+        await surveyApi.submitSurveyResponse(surveyId.value, sender.data)
+        alert("Thank you for completing the survey!")
+        router.push('/surveys')
+      } catch (err) {
+        console.error('Failed to submit survey:', err)
+        alert("There was an error submitting your survey. Please try again.")
+      } finally {
+        submitting.value = false
+      }
     })
-  } else {
-    error.value = "Survey not found"
+  } catch (err) {
+    console.error('Failed to fetch survey:', err)
+    error.value = "Survey not found or error loading survey"
+  } finally {
+    loading.value = false
   }
-  
-  loading.value = false
 })
 </script>
 

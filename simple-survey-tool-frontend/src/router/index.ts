@@ -25,6 +25,11 @@ const router = createRouter({
       component: () => import('../views/surveys/Survey.vue'),
       props: true
     },
+    {
+      path: '/api/surveys/:id/results',
+      name: 'survey results',
+      component: () => import('../views/surveys/SurveyResultsJSON.vue'),
+    },
   ],
 })
 
